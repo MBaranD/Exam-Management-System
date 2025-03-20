@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "gb4DRw75V9zUfdjosiTOd3mnIR/pXli7W15PuUGDI+laWLjkydIr2hkAvEhwSQY8qil4U0hIBCOukqXYW9AYxA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\46MBa\\Desktop\\ExamManagementSystem\\EntityLayer\\EntityLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\46MBa\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\46MBa\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\46MBa\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
