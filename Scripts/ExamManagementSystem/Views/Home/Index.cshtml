@@ -1,0 +1,125 @@
+﻿@model User
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam Management System</title>
+    <link rel="stylesheet" href="~/web_project/style.css" />
+  </head>
+
+  <body>
+    <!--Header-->
+    <header class="header">
+      <!--Logo-->
+      <img src="images/IBSlogo3.png" class="IBSlogo" alt="" height="70" />
+
+      <!--Navigation-->
+      <nav class="navigation">
+        <a asp-area="" asp-controller="Home" asp-action="Index"> HOME </a>
+        <a asp-area="" asp-controller="Home" asp-action="About"> ABOUT </a>
+        <a asp-area="" asp-controller="Home" asp-action="Contact"> CONTACT </a>
+<button onclick="location.href='@Url.Action("Login", "Account", new { area = "" })'" class="loginbutton">LOGIN</button>
+      </nav>
+    </header>
+
+    <!--Wrapper-->
+
+    <div class="wrapper">
+      <!--CloseButton-->
+      <span class="iconClose">
+        <ion-icon name="close-circle"></ion-icon>
+      </span>
+
+      <!--LoginHeader-->
+      <div class="loginForm">
+        <h3>Welcome to</h3>
+        <h2>Exam Management System</h2>
+        <form action="#">
+          <!--LoginPassword-->
+          <div class="inputBox">
+            <span class="icon">
+              <ion-icon name="person-circle"></ion-icon>
+            </span>
+            <input type="email" required />
+            <label>Mail</label>
+          </div>
+
+          <!--LoginPassword-->
+          <div class="inputBox">
+            <span class="icon">
+              <ion-icon name="key"></ion-icon>
+            </span>
+            <input type="password" required />
+            <label>Password</label>
+          </div>
+
+          <!--LoginNewMember-->
+          <button type="submit" class="submitButton">Login</button>
+          <div class="newMember">
+            <p>
+              Do you want to join us?
+              <a href="#" class="RegisterPageLink">Click Here!</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!--RegisterationHeader-->
+      <div class="registerForm">
+        <h2>Registration</h2>
+        <form action="#">
+          <!--RegisterationNameSurname-->
+          <div class="inputBox">
+            <span class="icon">
+              <ion-icon name="person"></ion-icon>
+            </span>
+            <input type="text" required />
+            <label>Name Surname</label>
+          </div>
+
+          <!--RegisterationMail-->
+          <div class="inputBox">
+            <span class="icon">
+              <ion-icon name="mail"></ion-icon>
+            </span>
+            <input type="email" required />
+            <label>Mail</label>
+          </div>
+
+          <!--RegisterationGSM-->
+          <div class="inputBox">
+            <span class="icon">
+              <ion-icon name="call"></ion-icon>
+            </span>
+            <input type="number" required />
+            <label>Gsm Number</label>
+          </div>
+
+          <!--RegisterationDepartment-->
+          <div class="rememberMe"></div>
+          <button type="submit" class="submitButton">Register</button>
+          <div class="newMember">
+            <p>
+              Already have an account?
+              <a href="#" class="HomePageLink">Click Here!</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="~/web_project/script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

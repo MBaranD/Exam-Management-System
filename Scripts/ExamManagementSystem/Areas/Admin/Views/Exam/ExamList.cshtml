@@ -1,0 +1,76 @@
+@model List<Exam>
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sınav /</span> Sınav İşlemleri</h4>
+
+    <div class="card">
+        <div class="table-responsive text-nowrap m-3">
+            <table class="table table-bordered" id="examTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Adı</th>
+                        <th>Sorular</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                    @foreach (var exam in Model)
+                    {
+                        <tr name="@exam.Id">
+                            <td>@exam.Id</td>
+                            <td>@exam.Name</td>
+                            <td>
+                                <ul>
+                                    @foreach (var question in exam.Questions)
+                                    {
+                                        <li style="border: 1px solid #ddd; padding: 5px; margin-bottom: 5px;">
+                                            @question.Text
+                                        </li>
+                                    }
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    @foreach (var question in exam.Questions)
+                                    {
+                                        <li style="border: 1px solid green; padding: 5px; margin-bottom: 5px;">
+                                            @question.CorrectAnswer
+                                        </li>
+                                    }
+                                </ul>
+                            </td>
+
+                            <td>
+                                <a class="btn btn-danger btn-sm" data-id="@exam.Id" asp-area="Admin" asp-controller="Exam" asp-action="ExamDelete" asp-route-examId="@exam.Id"><i class="ti ti-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal for Exam Details -->
+    <div class="modal fade" id="examDetailModal" tabindex="-1" role="dialog" aria-labelledby="examDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="examDetailModalLabel">Sınav Detayları</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="questionList" class="list-group">
+                        <!-- Sorular ve Cevapları bu listede gösterilecek -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/examList.js" type="application/ecmascript"></script>
+}

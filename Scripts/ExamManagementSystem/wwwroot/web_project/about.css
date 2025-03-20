@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/*PARALLAX_BACKGROUND*/
+.parallax {
+  background: url(images/85321.jpg);
+  background-size: contain;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/*PARALLAX_TITLE*/
+.text {
+  position: absolute;
+  text-align: center;
+  font-size: 5em;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  top: 36%;
+  background: goldenrod;
+  width: 600px;
+  border-radius: 80px;
+}
+
+/*PARALLAX_IMG*/
+.school {
+  position: absolute;
+  bottom: 0;
+  width: 45%;
+  pointer-events: none;
+}
+
+.hat1 {
+  position: absolute;
+  bottom: -200px;
+  right: 0px;
+  width: 800px;
+  pointer-events: none;
+}
+
+.hat2 {
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  width: 40%;
+  top: 0;
+  left: 10px;
+  pointer-events: none;
+}
+
+.hat3 {
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  width: 700px;
+  top: 0;
+  right: 0px;
+  pointer-events: none;
+}
+
+/*ABOUT*/
+.AboutDescription {
+  position: relative;
+  background: rgb(228,204,192);
+  padding: 100px;
+  text-align: center;
+  align-items: center;
+}
+
+.AboutDescription .DescriptionTitle h2 {
+  font-size: 3em;
+  color: gold;
+  margin-bottom: 50px;
+  font-weight: 800;
+  font-family: Verdana, Geneva, Tahoma, serif;
+  text-shadow: 2px 2px 4px black;
+  text-decoration: underline;
+}
+
+.AboutDescription .DescriptionText p {
+  font-size: 1.3em;
+  color: white;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px black;
+  margin-bottom: 30px;
+}
+
+/*HOME_BUTTON*/
+.Return_Home{
+  position: relative;
+  text-align: center;
+}
+
+.Return_Home .HomeButton {
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 2px solid white;
+  outline: none;
+  border-radius: 90px;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  transition: 0.3s;
+  padding-top: 5px;
+}
+
+.Return_Home .HomeButton:hover {
+  background: green;
+  color: black;
+}

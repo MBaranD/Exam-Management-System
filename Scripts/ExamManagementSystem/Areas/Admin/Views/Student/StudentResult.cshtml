@@ -1,0 +1,34 @@
+@model List<Result>
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Öğrenci /</span> Öğrenci İşlemleri</h4>
+
+    <div class="card">
+        <div class="table-responsive text-nowrap m-3">
+            <table class="table table-bordered" id="userTable" width="100%" collspacing="0">
+                <thead>
+                    <tr>
+                        <th>Öğrenci Id</th>
+                        <th>Sınav Id</th>
+                        <th>Sonuç</th>
+                    </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                    @foreach (var item in Model)
+                    {
+                        <tr name="@item.Id">
+                            <td>@item.Student?.NameSurname</td>
+                            <td>@item.Exam?.Name</td>
+                            <td>@item.Score</td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/userList.js" type="application/ecmascript"></script>
+}

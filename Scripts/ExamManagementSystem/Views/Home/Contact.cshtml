@@ -1,0 +1,101 @@
+@model Message
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/web_project/contact.css" />
+</head>
+
+<body>
+    <section class="contact">
+
+        <!--HomeButton-->
+        <div class="Return_Home">
+            <button onclick="window.location.href='/Home/Index'" class="HomeButton"> <ion-icon name="home-sharp"></ion-icon></button>
+        </div>
+
+        <!--ContactUsTitle-->
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>We are here to implement your suggestions and solve your problems!<br> You can contact us from our contact addresses below or by filling out the form.
+        </div>
+
+        <div class="container">
+            <div class="contactInfo">
+
+                <!--ContactAddress-->
+                <div class="box">
+                    <div class="contactIcon">
+                        <ion-icon name="location"></ion-icon>
+                    </div>
+                    <div class="text">
+                        <h3>Address:</h3>
+                        <p>Ataköy 7-8-9-10 kısım mahallesi,<br> E5 Karayolu Üzeri Ataköy Yerleşkesi,<br> 34158 Bakırköy/İstanbul</p>
+                    </div>
+                </div>
+
+                <!--ContactPhone-->
+                <div class="box">
+                    <div class="contactIcon">
+                        <ion-icon name="call"></ion-icon>
+                    </div>
+                    <div class="text">
+                        <h3>Phone:</h3>
+                        <p>(+90) 533 *** **** </p>
+                    </div>
+                </div>
+
+                <!--ContactEmail-->
+                <div class="box">
+                    <div class="contactIcon">
+                        <ion-icon name="mail-open"></ion-icon>
+                    </div>
+                    <div class="text">
+                        <h3>Email:</h3>
+                        <p>2000003067@stu.iku.edu.tr</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--ContactForm-->
+            <div class="contactForm">
+                <form asp-area="" asp-controller="Home" asp-action="Contact" method="post">
+                    <h2>Send Message </h2>
+                    <div class="ContactInputBox">
+                        <input type="text" asp-for="SenderName" required="required" />
+                        <span>Full Name</span>
+                    </div>
+
+                    <div class="ContactInputBox">
+                        <input type="text" asp-for="SenderEmail" required="required" />
+                        <span>Email</span>
+                    </div>
+
+                    <div class="ContactInputBox">
+                        <textarea asp-for="Content" required="required" style="width: 100%; height: 150px;"></textarea>
+                        <span>SEND MESSAGE...</span>
+                    </div>
+
+
+                    <div class="ContactInputBox">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!--SCRIPTS-->
+    <script type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+

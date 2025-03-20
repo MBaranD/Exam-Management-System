@@ -1,0 +1,25 @@
+@model List<Question>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sınav /</span> Sorular</h4>
+
+    <div class="card">
+        <div class="table-responsive text-nowrap m-3">
+            <form asp-area="Student" asp-controller="Exam" asp-action="SubmitExam" method="post">
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <div class="mb-3">
+                        <h5>Soru @(i + 1): @Model[i].Text</h5>
+                        <div class="form-group">
+                            <label for="answer@(i + 1)">Cevabınız:</label>
+                            <input type="text" class="form-control" name="answers[@i]" id="answer@(i + 1)" placeholder="Cevabınızı giriniz">
+                            <input type="hidden" name="examId" value="@ViewBag.ExamId" />
+                            @*<span class="text-success">Doğru Cevap: @Model[i].CorrectAnswer</span>*@
+                        </div>
+                    </div>
+                }
+
+                <button type="submit" class="btn btn-primary">Sınavı Tamamla</button>
+            </form>
+        </div>
+    </div>
+</div>

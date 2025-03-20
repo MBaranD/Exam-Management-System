@@ -1,0 +1,91 @@
+@model User
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam Management System</title>
+    <link rel="stylesheet" href="~/web_project/style.css" />
+  </head>
+
+  <body>
+    <!--Header-->
+    <header class="header">
+      <!--Logo-->
+      <img src="images/IBSlogo3.png" class="IBSlogo" alt="" height="70" />
+
+      <!--Navigation-->
+      <nav class="navigation">
+        <a asp-area="" asp-controller="Home" asp-action="Index"> HOME </a>
+        <a asp-area="" asp-controller="Home" asp-action="About"> ABOUT </a>
+        <a asp-area="" asp-controller="Home" asp-action="Contact"> CONTACT </a>
+        <button class="loginbutton">LOGIN</button>
+      </nav>
+    </header>
+
+    <!--Wrapper-->
+
+    <div class="wrapper active-popup" style="height:600px">
+        <!--CloseButton-->
+        <span class="iconClose">
+            <ion-icon name="close-circle"></ion-icon>
+        </span>
+        <div class="loginForm">
+            <h2>Registration</h2>
+            <form asp-area="" asp-controller="Account" asp-action="Register" method="post">
+                <!--LoginPassword-->
+                <div class="inputBox">
+                    <span class="icon">
+                        <ion-icon name="person-circle"></ion-icon>
+                    </span>
+                    <input asp-for="NameSurname" type="text" required />
+                    <label>Ad Soyad</label>
+                </div>
+                <div class="inputBox">
+                    <span class="icon">
+                        <ion-icon name="person-circle"></ion-icon>
+                    </span>
+                    <input asp-for="PhoneNumber" type="text" required />
+                    <label>Telefon Numarası</label>
+                </div>
+                <div class="inputBox">
+                    <span class="icon">
+                        <ion-icon name="person-circle"></ion-icon>
+                    </span>
+                    <input asp-for="Email" type="email" required />
+                    <label>Email</label>
+                </div>
+
+                <!--LoginPassword-->
+                <div class="inputBox">
+                    <span class="icon">
+                        <ion-icon name="key"></ion-icon>
+                    </span>
+                    <input asp-for="Password" type="password" required />
+                    <label>Şifre</label>
+                </div>
+
+                <!--LoginNewMember-->
+                <button type="submit" class="submitButton">Login</button>
+                <div class="newMember">
+                    <p>
+                        Already have an account ?
+                        <a asp-area="" asp-controller="Home" asp-action="Login" class="RegisterPageLink">LOGIN!</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

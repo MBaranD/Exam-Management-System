@@ -1,0 +1,58 @@
+@model Exam
+
+<form asp-action="ExamAdd" asp-controller="Exam" method="post" id="examForm">
+    <div class="form-group">
+        <label asp-for="Name">Sınav Başlığı</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div id="questionsContainer">
+        <div class="row">
+            <!-- Soru 1 -->
+            <div class="col-md-4">
+                <div class="question">
+                    <label class="mt-2">Soru 1</label>
+                    <input type="text" name="Questions[0].Text" class="form-control" />
+
+                    <!-- Doğru Cevap -->
+                    <div class="form-control mt-2">
+                        <label>Doğru Cevabı Giriniz</label>
+                        <input type="text" name="Questions[0].CorrectAnswer" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soru 2 -->
+            <div class="col-md-4">
+                <div class="question">
+                    <label class="mt-2">Soru 2</label>
+                    <input type="text" name="Questions[1].Text" class="form-control" />
+
+                    <!-- Doğru Cevap -->
+                    <div class="form-control mt-2">
+                        <label>Doğru Cevabı Giriniz</label>
+                        <input type="text" name="Questions[1].CorrectAnswer" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soru 3 -->
+            <div class="col-md-4">
+                <div class="question">
+                    <label class="mt-2">Soru 3</label>
+                    <input type="text" name="Questions[2].Text" class="form-control" />
+
+                    <!-- Doğru Cevap -->
+                    <div class="form-control mt-2">
+                        <label>Doğru Cevabı Giriniz</label>
+                        <input type="text" name="Questions[2].CorrectAnswer" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Sınavı Ekle</button>
+</form>

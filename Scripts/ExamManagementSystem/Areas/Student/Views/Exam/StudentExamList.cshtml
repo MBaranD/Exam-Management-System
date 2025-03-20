@@ -1,0 +1,42 @@
+@model List<ExamViewModel>
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sınav /</span> Sınav İşlemleri</h4>
+
+    <div class="card">
+        <div class="table-responsive text-nowrap m-3">
+            <table class="table table-bordered" id="examTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Adı</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                    @foreach (var examViewModel in Model)
+                    {
+                        <tr name="@examViewModel.Exam.Id">
+                            <td>@examViewModel.Exam.Id</td>
+                            <td>@examViewModel.Exam.Name</td>
+                            <td>
+                                @if (examViewModel.HasTakenExam)
+                                {
+                                    <span class="text-success">Sınav Tamamlandı</span>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Action("StartExam", "Exam", new { area = "Student", examId = examViewModel.Exam.Id })" class="btn btn-primary">Sınava Başla</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/examList.js" type="application/ecmascript"></script>
+}

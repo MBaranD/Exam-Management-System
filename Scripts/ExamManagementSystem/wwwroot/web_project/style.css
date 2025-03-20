@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("images/group-high-school-students-taking-test-classroom.jpg")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background: transparent;
+  backdrop-filter: blur(3px);
+}
+
+.IBSlogo {
+  height: 3.8em;
+  color: navy;
+  user-select: none;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 40px;
+}
+
+.navigation a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: gold;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.navigation a:hover:after {
+  transform: scaleX(1);
+}
+
+.navigation .loginbutton {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid white;
+  outline: none;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 1.4em;
+  color: white;
+  font-weight: 700;
+  margin-left: 30px;
+  transition: 0.3s;
+}
+
+.navigation .loginbutton:hover {
+  background: gold;
+  color: black;
+}
+
+.wrapper {
+  position: relative;
+  width: 600px;
+  height: 450px;
+  background: transparent;
+  border: 2px solid rgb(red, green, blue);
+  border-radius: 30px;
+  backdrop-filter: blur(50px);
+  box-shadow: 0 0 30px rgb(red, green, blue);
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  overflow: hidden;
+  transform: scale(0);
+  transition: transform 0.5s ease, height 0.2s ease;
+  margin-top: 100px;
+}
+
+.wrapper.active-popup {
+  transform: scale(1);
+}
+
+.wrapper.active {
+  height: 500px;
+}
+
+.wrapper .loginForm {
+  width: 100%;
+  padding: 40px;
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+
+.wrapper.active .loginForm {
+  transition: none;
+  transform: translateX(-600px);
+}
+
+.wrapper .registerForm {
+  position: absolute;
+  transform: translateX(500px);
+  transition: none;
+}
+
+.wrapper.active .registerForm {
+  width: 100%;
+  padding: 40px;
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+
+.wrapper .iconClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  background: goldenrod;
+  border-bottom-left-radius: 20px;
+  font-size: 2em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.loginForm h2 {
+  font-size: 2em;
+  color: wheat;
+  text-align: center;
+}
+
+.loginForm h3 {
+  font-size: 20px;
+  color: wheat;
+  text-align: center;
+}
+
+.registerForm h2 {
+  font-size: 2em;
+  color: wheat;
+  text-align: center;
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid wheat;
+  margin: 30px 0;
+}
+
+.inputBox label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: wheat;
+  font-weight: 300;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.inputBox input:focus ~ label,
+.inputBox input:valid ~ label {
+  top: -5px;
+}
+
+.inputBox input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: black;
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+
+.inputBox .icon {
+  position: absolute;
+  right: -5px;
+  font-size: 1.8em;
+  color: wheat;
+  line-height: 32px;
+}
+
+/*Projeden Çıkarıldı*/
+/*.rememberMe {
+  font-size: 1em;
+  color: whitesmoke;
+  font-weight: 400;
+  margin: -15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rememberMe label input {
+  accent-color: red;
+  margin-right: 2px;
+}
+
+.rememberMe a {
+  color: rgb(245, 3, 233);
+  text-decoration: none;
+}
+
+.rememberMe a:hover {
+  text-decoration: underline;
+}*/
+
+.submitButton {
+  width: 100%;
+  height: 45px;
+  background: goldenrod;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1em;
+  color: wheat;
+  font-weight: 500;
+}
+
+.newMember {
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  font-weight: 500;
+  margin: 20px 0 10px;
+}
+
+.newMember p a {
+  color: greenyellow;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.newMember p a:hover {
+  text-decoration: underline;
+}

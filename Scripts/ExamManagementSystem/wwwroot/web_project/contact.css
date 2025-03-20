@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contact {
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("images/contacthardal1.jpg");
+  background-size: cover;
+}
+
+
+/*HOME_BUTTON*/
+.Return_Home .HomeButton {
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 2px solid white;
+  outline: none;
+  border-radius: 90px;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  transition: 0.3s;
+  padding-top: 5px;
+  margin-bottom: 40px;
+}
+
+.Return_Home .HomeButton:hover {
+  background: green;
+  color: black;
+}
+
+
+/*TITLE*/
+.contact .content {
+  max-width: 800px;
+  text-align: center;
+}
+
+
+/*Contact Us*/
+.contact .content h2 {
+  font-size: 54px;
+  font-weight: 500;
+  color: white;
+  font-family: Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif;
+  background: transparent;
+}
+
+/*Contact Us Description*/
+.contact .content p {
+  font-weight: 300;
+  color: whitesmoke;
+  font-size: 20px;
+  font-family: italic;
+  background: transparent;
+  margin-top: 12px;
+}
+
+
+/*CONTACT_INFO & SEND_MESSAGE GROUP*/
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+
+/*Contact_Info*/
+.container .contactInfo {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20%;
+  border-radius: 40px;
+}
+
+.container .contactInfo .box {
+  position: relative;
+  padding: 20px;
+  display: flex;
+}
+
+/*Contact_Info_Icons*/
+.container .contactInfo .box .contactIcon {
+  min-width: 60px;
+  height: 60px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 28px;
+  filter: invert(80%);
+}
+/*Contact_Info_Description*/
+.container .contactInfo .box .text {
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  color: whitesmoke;
+  flex-direction: column;
+  font-weight: 300;
+}
+
+/*Contact_Info_Titles*/
+.container .contactInfo .box .text h3 {
+  font-weight: 500;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: 8px;
+}
+
+
+/*CONTACT_FORM*/
+.contactForm {
+  width: 40%;
+  padding: 40px;
+  background: url(images/messageboxbg.jpg);
+  border-radius: 50px;
+}
+
+/*Contact_Form_Title*/
+.contactForm h2 {
+  font-size: 34px;
+  color: goldenrod;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 2px 2px 4px black;
+}
+
+.contactForm .ContactInputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contactForm .ContactInputBox input{
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid grey;
+  outline: none;
+  resize: none;
+  background: transparent;
+}
+
+.contactForm .ContactInputBox textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid grey;
+  outline: none;
+  resize: none;
+  background: transparent;
+}
+
+.contactForm .ContactInputBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: grey;
+}
+.contactForm .ContactInputBox input:focus ~ span,
+.contactForm .ContactInputBox input:valid ~ span,
+.contactForm .ContactInputBox textarea:focus ~ span,
+.contactForm .ContactInputBox textarea:valid ~ span {
+  color: black;
+  font-size: 12px;
+  transform: translateY(-24px);
+}
+
+.contactForm .ContactInputBox input[type="submit"] {
+  width: 100px;
+  background: goldenrod;
+  color:white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  text-align: center;
+}
+@media (max-width: 991px) {
+  .contact {
+    padding: 50px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .container .contactInfo {
+    margin-bottom: 40px;
+  }
+  .container .contactInfo,
+  .contactForm {
+    width: 100%;
+  }
+}
