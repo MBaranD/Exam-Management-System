@@ -1,0 +1,18 @@
+-This project was made with visual studio 2022 and sql server management studio 19
+-Change the connection string in "appsettings.json" with your own connection string(SQL server management)
+-Delete the "migrations folder" on the data layer.
+-Open the Package Manager Console. Select "DataLayer" as the default project.
+-Write "add-migration Init" on the console.
+-Write "update-database" on the console.
+
+ADMIN PANEL:
+admin@gmail.com
+123456
+
+TEACHER PANEL:
+ogretmen@gmail.com
+123456
+
+STUDENT PANEL:
+ogrenci@gmail.com
+123456
